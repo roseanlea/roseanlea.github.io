@@ -1,150 +1,71 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayşe Sude Özden</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #f9f9f9;
-      --text-color: #333;
-      --card-bg: white;
-      --card-shadow: rgba(0, 0, 0, 0.05);
-      --header-bg: #4f46e5;
-      --header-text: white;
-      --footer-bg: #eee;
-    }
-
-    body.dark {
-      --bg-color: #1e1e1e;
-      --text-color: #f0f0f0;
-      --card-bg: #2b2b2b;
-      --card-shadow: rgba(255, 255, 255, 0.05);
-      --header-bg: #3333aa;
-      --header-text: white;
-      --footer-bg: #111;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      transition: all 0.3s ease;
-    }
-    header {
-      background-color: var(--header-bg);
-      color: var(--header-text);
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    .card {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 10px var(--card-shadow);
-      margin-bottom: 1rem;
-      transition: background 0.3s ease;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: var(--footer-bg);
-      font-size: 0.9rem;
-    }
-    a {
-      color: #4f46e5;
-      text-decoration: none;
-    }
-    .button {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      background-color: #4f46e5;
-      color: white;
-      border: none;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 0.5rem;
-    }
-    .button:hover {
-      background-color: #3730a3;
-    }
-    .dark-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background-color: white;
-      color: #333;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    body.dark .dark-toggle {
-      background-color: #444;
-      color: white;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayşe Sude Özden | Kişisel Web Sitesi</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
-<body>
-  <header>
-    <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-    <h1>Merhaba, ben Ayşe Sude Özden</h1>
-    <p>Web geliştirici adayı | Tasarım ve kodlama tutkunu</p>
-  </header>
-
-  <section>
-    <div class="card">
-      <h2>Hakkımda</h2>
-      <p>Web tasarıma yeni başladım ve öğrendiklerimi burada paylaşıyorum. HTML ve SQL öğreniyorum. GitHub Pages ile projelerimi yayınlıyorum.</p>
-      <a href="https://github.com/aysesudeozden" class="button">Daha Fazla</a>
+<body class="bg-gradient-to-br from-blue-100 to-white text-gray-800 min-h-screen">
+  <div class="max-w-3xl mx-auto p-6 mt-10 bg-white rounded-xl shadow-lg">
+    <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+      <img
+        src="https://github.com/aysesudeozden.png"
+        alt="Profil Fotoğrafı"
+        class="w-24 h-24 rounded-full border-2 border-gray-300"
+      />
+      <div>
+        <h1 class="text-3xl font-bold">Ayşe Sude Özden</h1>
+        <p class="text-gray-600">Bilgisayar Mühendisliği Öğrencisi | Giresun Üniversitesi</p>
+        <a
+          href="https://github.com/aysesudeozden"
+          target="_blank"
+          class="inline-block mt-2 text-blue-600 hover:underline"
+        >
+          GitHub Profilim
+        </a>
+        <br />
+        <a
+          href="cv.pdf"
+          download
+          class="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          CV'yi İndir (PDF)
+        </a>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Projelerim</h2>
-      <ul>
-        <li><a href="https://kullaniciadi.github.io/proje1" target="_blank">🛠 Proje 1</a></li>
-        <li><a href="https://kullaniciadi.github.io/proje2" target="_blank">📱 Proje 2</a></li>
+    <div class="mt-6">
+      <h2 class="text-xl font-semibold mb-2">Hakkımda</h2>
+      <p>
+        Merhaba! Ben Ayşe Sude Özden. Giresun Üniversitesi Bilgisayar Mühendisliği 4. sınıf öğrencisiyim.
+        Yazılım geliştirme, yapay zeka, siber güvenlik ve artırılmış gerçeklik konularına ilgi duyuyorum.
+        Projelerimi GitHub'da açık kaynak olarak paylaşıyor, sürekli kendimi geliştiriyorum.
+      </p>
+    </div>
+
+    <div class="mt-6">
+      <h2 class="text-xl font-semibold mb-2">Projelerim</h2>
+      <ul class="list-disc list-inside space-y-1 text-blue-700">
+        <li>
+          <a href="https://github.com/aysesudeozden/ar-spor-asistani" target="_blank" class="hover:underline">
+            AR Tabanlı Spor Asistanı
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/aysesudeozden/akilli-trafik-sistemi" target="_blank" class="hover:underline">
+            Akıllı Trafik Sinyalizasyon Sistemi
+          </a>
+        </li>
       </ul>
-      <a href="https://github.com/aysesudeozden?tab=repositories" class="button">Tüm Projeler</a>
     </div>
 
-    <div class="card">
-      <h2>İletişim</h2>
-      <p>Bana <a href="aysesudeozden@gmail.com">e-posta</a> gönderebilirsiniz ya da <a href="https://github.com/aysesudeozden" target="_blank">GitHub profilimi</a> inceleyebilirsiniz.</p>
-      <a href="https://www.instagram.com/aysesudeozden/" class="button">İnstagram üzerinden iletişime geç!</a>
+    <div class="mt-6">
+      <h2 class="text-xl font-semibold mb-2">İletişim</h2>
+      <p>
+        Projelerimle ilgili detaylı bilgi almak ya da birlikte çalışmak isterseniz benimle GitHub üzerinden iletişime geçebilirsiniz.
+      </p>
     </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Ayşe Sude Özden. Tüm hakları saklıdır.
-  </footer>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
+  </div>
 </body>
 </html>
