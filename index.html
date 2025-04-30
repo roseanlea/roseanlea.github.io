@@ -1,105 +1,150 @@
 <!DOCTYPE html>
-<html lang="tr" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ayşe Sude Özden</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Dark mode başlangıç ayarı
-      if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
-  </head>
-  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
-    <div class="max-w-3xl mx-auto p-6">
-      <!-- Header -->
-      <div class="flex items-center justify-between mb-6">
-        <h1 class="text-3xl font-bold">Ayşe Sude Özden</h1>
-        <button
-          id="toggle-theme"
-          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm transition"
-        >
-          🌙 Dark Mode
-        </button>
-      </div>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayşe Sude Özden</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --card-bg: white;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+      --header-bg: #4f46e5;
+      --header-text: white;
+      --footer-bg: #eee;
+    }
 
-      <!-- Profil -->
-      <div class="flex items-center space-x-6">
-        <img
-          src="https://github.com/aysesudeozden.png"
-          alt="Profil Fotoğrafı"
-          class="w-24 h-24 rounded-full border-2 border-gray-300 dark:border-gray-600"
-        />
-        <div>
-          <p class="text-lg">Bilgisayar Mühendisliği Öğrencisi</p>
-          <a
-            href="https://github.com/aysesudeozden"
-            target="_blank"
-            class="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            GitHub Profilim
-          </a>
-        </div>
-      </div>
+    body.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #f0f0f0;
+      --card-bg: #2b2b2b;
+      --card-shadow: rgba(255, 255, 255, 0.05);
+      --header-bg: #3333aa;
+      --header-text: white;
+      --footer-bg: #111;
+    }
 
-      <!-- Hakkımda -->
-      <section class="mt-8">
-        <h2 class="text-xl font-semibold mb-2">Hakkımda</h2>
-        <p>
-          Merhaba! Ben Ayşe Sude Özden. Giresun Üniversitesi Bilgisayar Mühendisliği 4. sınıf öğrencisiyim.
-          Yapay zeka, artırılmış gerçeklik ve siber güvenlik gibi alanlarla ilgileniyorum.
-        </p>
-      </section>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px var(--card-shadow);
+      margin-bottom: 1rem;
+      transition: background 0.3s ease;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--footer-bg);
+      font-size: 0.9rem;
+    }
+    a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 0.5rem;
+    }
+    .button:hover {
+      background-color: #3730a3;
+    }
+    .dark-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: white;
+      color: #333;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    body.dark .dark-toggle {
+      background-color: #444;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <h1>Merhaba, ben Ayşe Sude Özden</h1>
+    <p>Bilgisayar Mühendisliği Adayı</p>
+  </header>
 
-      <!-- Projeler -->
-      <section class="mt-8">
-        <h2 class="text-xl font-semibold mb-2">Projeler</h2>
-        <ul class="list-disc list-inside space-y-1 text-blue-700 dark:text-blue-400">
-          <li>
-            <a href="https://github.com/aysesudeozden/ar-spor-asistani" target="_blank" class="hover:underline">
-              AR Tabanlı Spor Asistanı
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/aysesudeozden/akilli-trafik-sistemi" target="_blank" class="hover:underline">
-              Akıllı Trafik Sinyalizasyon Sistemi
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <!-- CV -->
-      <section class="mt-8">
-        <a
-          href="cv.pdf"
-          download
-          class="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded mt-2"
-        >
-          📄 CV'yi İndir
-        </a>
-      </section>
+  <section>
+    <div class="card">
+      <h2>Hakkımda</h2>
+      <p>Web tasarıma yeni başladım ve öğrendiklerimi burada paylaşıyorum. HTML, CSS ve JavaScript öğreniyorum. GitHub Pages ile projelerimi yayınlıyorum.</p>
+      <a href="https://github.com/aysesudeozden" class="button">Daha Fazla</a>
     </div>
 
-    <script>
-      const btn = document.getElementById('toggle-theme');
-      btn.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-        const isDark = document.documentElement.classList.contains('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        btn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-      });
+    <div class="card">
+      <h2>Projelerim</h2>
+      <ul>
+        <li><a href="https://kullaniciadi.github.io/proje1" target="_blank">🛠 Proje 1</a></li>
+        <li><a href="https://kullaniciadi.github.io/proje2" target="_blank">📱 Proje 2</a></li>
+      </ul>
+      <a href="https://github.com/aysesudeozden?tab=repositories" class="button">Tüm Projeler</a>
+    </div>
 
-      // Sayfa yüklendiğinde düğme içeriğini ayarla
-      btn.textContent = document.documentElement.classList.contains('dark')
-        ? '☀️ Light Mode'
-        : '🌙 Dark Mode';
-    </script>
-  </body>
+    <div class="card">
+      <h2>İletişim</h2>
+      <p>Bana <a href="aysesudeozden@gmail.com">e-posta</a> gönderebilirsiniz ya da <a href="https://github.com/kullaniciadi" target="_blank">GitHub profilimi</a> inceleyebilirsiniz.</p>
+      <a href="https://www.instagram.com/aysesudeozden/" class="button">İletişime Geç</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ayşe Sude Özden. Tüm hakları saklıdır.
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
 </html>
