@@ -4,23 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ayşe Sude Özden | Kişisel Web Sitesi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Karanlık mod tercihine göre body class'ı ayarlanıyor
-    if (localStorage.theme === 'dark' || 
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Karanlık mod tercihine göre HTML'e class ekle
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   </script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen transition duration-300">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition duration-300 min-h-screen">
 
   <div class="max-w-3xl mx-auto p-6 mt-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
     <div class="flex justify-between items-center mb-4">
       <h1 class="text-2xl font-bold">Ayşe Sude Özden</h1>
-      <button id="theme-toggle" class="px-3 py-1 text-sm rounded bg-blue-600 text-white hover:bg-blue-700 transition">
+      <button id="theme-toggle" class="px-3 py-1 text-sm rounded bg-blue-600 text-white hover:bg-blue-700">
         🌙 Dark Mode
       </button>
     </div>
@@ -42,59 +44,4 @@
       </div>
     </div>
 
-    <div class="mt-6">
-      <h2 class="text-xl font-semibold mb-2">Hakkımda</h2>
-      <p>
-        Merhaba! Ben Ayşe Sude Özden. Giresun Üniversitesi Bilgisayar Mühendisliği 4. sınıf öğrencisiyim.
-        Yazılım geliştirme, yapay zeka, siber güvenlik ve artırılmış gerçeklik konularına ilgi duyuyorum.
-        Projelerimi GitHub'da açık kaynak olarak paylaşıyor, sürekli kendimi geliştiriyorum.
-      </p>
-    </div>
-
-    <div class="mt-6">
-      <h2 class="text-xl font-semibold mb-2">Projelerim</h2>
-      <ul class="list-disc list-inside space-y-1 text-blue-700 dark:text-blue-400">
-        <li>
-          <a href="https://github.com/aysesudeozden/ar-spor-asistani" target="_blank" class="hover:underline">
-            AR Tabanlı Spor Asistanı
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/aysesudeozden/akilli-trafik-sistemi" target="_blank" class="hover:underline">
-            Akıllı Trafik Sinyalizasyon Sistemi
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mt-6">
-      <h2 class="text-xl font-semibold mb-2">İletişim</h2>
-      <p>
-        Projelerimle ilgili detaylı bilgi almak ya da birlikte çalışmak isterseniz GitHub üzerinden iletişime geçebilirsiniz.
-      </p>
-    </div>
-  </div>
-
-  <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      if (document.documentElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '☀️ Light Mode';
-      } else {
-        localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '🌙 Dark Mode';
-      }
-    });
-
-    // Tema butonunu güncelle
-    if (document.documentElement.classList.contains('dark')) {
-      toggleBtn.textContent = '☀️ Light Mode';
-    } else {
-      toggleBtn.textContent = '🌙 Dark Mode';
-    }
-  </script>
-
-</body>
-</html>
+    <div
