@@ -4,10 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ayşe Sude Özden | Kişisel Web Sitesi</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script>
+    // Karanlık mod tercihine göre body class'ı ayarlanıyor
+    if (localStorage.theme === 'dark' || 
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-br from-blue-100 to-white text-gray-800 min-h-screen">
-  <div class="max-w-3xl mx-auto p-6 mt-10 bg-white rounded-xl shadow-lg">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen transition duration-300">
+
+  <div class="max-w-3xl mx-auto p-6 mt-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-2xl font-bold">Ayşe Sude Özden</h1>
+      <button id="theme-toggle" class="px-3 py-1 text-sm rounded bg-blue-600 text-white hover:bg-blue-700 transition">
+        🌙 Dark Mode
+      </button>
+    </div>
     <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
       <img
         src="https://github.com/aysesudeozden.png"
